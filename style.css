@@ -1,0 +1,85 @@
+body {
+    font-family: 'Trebuchet MS';
+    background-color: red;
+}
+
+#headingBackground {
+    z-index: -1;
+    /* width: 100vw; */
+    top: 0vh;
+    margin-top: -2vh;
+    height: 100vh;
+    justify-content:center;
+    width: 100vw;
+    justify-content: stretch;
+}
+
+#headingBackgroundImage {
+    margin-top: 0vh;
+    width: 100vw;
+    border-bottom: #171717 50px solid;
+    margin-left: -0.5vw;
+}
+
+#websiteName {
+    font-size: 90px;
+    text-align: center;
+    background-color: transparent;
+    color: white;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: black;
+    font-weight: bold;
+    font-family:'Trebuchet MS';
+    font-weight: bolder;
+    position: absolute;
+    top: 25vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#websiteDescription {
+    text-align: center;
+    background-color: transparent;
+    color: white;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    font-weight: bold;
+    font-family: 'Trebuchet MS';
+    font-size: 40px;
+    position: absolute;
+    top: 45vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#appBackground {
+    justify-content: center;
+    width: 100vw;
+    justify-content: stretch;
+    height: 100vh;
+    position: fixed;
+    z-index: -2;
+    margin-left: -50.5vw;
+    top: 0vh;
+}
+
+#backgroundImage {
+    margin-top: -40vh;
+    margin-left: 50vw;
+    width: 100vw;
+}
+
+#graySquareBackground {
+    justify-content: center;
+    justify-content: stretch;
+    z-index: -1;
+}
+
+#graySquareBackgroundImage {
+    margin: 5%;
+    width: 90vw;
+}
+
+
+
+  
