@@ -27,7 +27,7 @@
     
 
     <div class="main_container">
-        <h1 id="calculatorHeading">Calculator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+        <h1 id="calculatorHeading">CALCULATOR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
 
         <form class="form_container" id="budget_form"><br><br><br><br><br>
             <div class="adlib">
@@ -55,6 +55,9 @@
                 <input type="number" id="phoneBill_input" placeholder="  Enter cost here" /><br><br>
             </div>
             <button id="submit_btn" type="button">Calculate</button>
+
+            <!-- <div id="submit_btn" role=button>Calculate</div> -->
+
         </form>
 
         <div id="whiteRect">
@@ -69,10 +72,17 @@
             <div class="bar" id="phoneBill-bar"></div>
         </div>
 
-        <h1 id="remaining_display">Amount of money left after expenses: $0</h1>
+        <h1 id="remaining_display"></h1>
 
     </div>
 
+    <div id="recommendedSection">
+        <div id="recommendedSectionBackground">
+            <img id="recommendedSectionBackgroundImage" src="images/graysquarebackground.png">
+        </div>
+        
+        <div id="recommendedHeading">RECOMMENDED PRODUCTS WITHIN YOUR BUDGET</div>
+    </div>
 
     <script src="script.js"></script>
 </body>

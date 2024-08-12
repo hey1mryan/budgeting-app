@@ -28,7 +28,7 @@ function updateBarGraph(budget) {
 
 function updateSalaryDisplay(e) {
     const salary = e.target.value || 0;
-    remainingDisplay.textContent = `Your Salary: $${salary}`;
+    remainingDisplay.textContent = `Amount of Money Left After Expenses: $${salary}`;
 }
 
 salaryInput.addEventListener("input", updateSalaryDisplay);
