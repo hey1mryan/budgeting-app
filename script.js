@@ -4,16 +4,28 @@ let waterBillInput = document.getElementById("waterBill_input");
 let electricityBillInput = document.getElementById("electricityBill_input");
 let gasBillInput = document.getElementById("gasBill_input");
 let phoneBillInput = document.getElementById("phoneBill_input");
+let OtherBillInput = document.getElementById("OtherBill_input");
 let submitBtn = document.getElementById("submit_btn");
-let remainingDisplay = document.getElementById("remaining_display");
+let salaryDisplay = document.getElementById("salary_display");
+//boxes
+let wantsBox = document.getElementById("wants-box");
+let savingsBox = document.getElementById("savings-box");
 
-function updateBarGraph(budget) {
+
+function updateBarGraph(budget, salary) {
     console.log("Updating bar graph with budget:", budget);
-    const maxBudget = Math.max(...Object.values(budget), 1); // Ensure maxBudget is at least 1 to avoid division by zero
+    const maxBudget = Math.max(...Object.values(budget), 1, salary); 
     console.log("Max budget:", maxBudget);
 
+    const salaryBar = document.getElementById("salary-bar");
+    if (salaryBar) {
+        const percentage = (salary / maxBudget) * 100;
+        salaryBar.style.height = `${percentage}%`;
+        salaryBar.textContent = `$${salary}`;
+    }
+
     for (const category in budget) {
-        const barId = category.replace(/_/g, '') + "-bar"; // Ensure underscores are removed in ID matching
+        const barId = category.replace(/_/g, '') + "-bar"; // removes underscores
         const bar = document.getElementById(barId);
         if (bar) {
             const percentage = (budget[category] / maxBudget) * 100;
@@ -28,7 +40,7 @@ function updateBarGraph(budget) {
 
 function updateSalaryDisplay(e) {
     const salary = e.target.value || 0;
-    remainingDisplay.textContent = `Amount of Money Left After Expenses: $${salary}`;
+    salaryDisplay.textContent = `Your Salary: $${salary}`;
 }
 
 salaryInput.addEventListener("input", updateSalaryDisplay);
@@ -36,20 +48,28 @@ salaryInput.addEventListener("input", updateSalaryDisplay);
 function handleFormSubmit(event) {
     event.preventDefault();
 
-    const salary = parseFloat(salaryInput.value)||0;
+    const salary = parseFloat(salaryInput.value) || 0;
     const budget = {
         rent_mortgage: parseFloat(rent_MortgageInput.value) || 0,
         waterBill: parseFloat(waterBillInput.value) || 0,
         electricityBill: parseFloat(electricityBillInput.value) || 0,
         gasBill: parseFloat(gasBillInput.value) || 0,
         phoneBill: parseFloat(phoneBillInput.value) || 0,
+        OtherBill: parseFloat(OtherBillInput.value) || 0,
     };
-//math
-    const totalExpenses = Object.values(budget).reduce((sum,value) => sum+value,0);
-    const remainingAmount = salary-totalExpenses;
 
-    updateBarGraph(budget);
-    salaryDisplay.textContent = `Your Salary: $${salary}    ||  Remaining Amount after expenses: $${remainingAmount.toFixed(2)}`;
+    const totalExpenses = Object.values(budget).reduce((sum, value) => sum + value, 0);
+    const remainingAmount = salary - totalExpenses;
+
+    const wantsAmount = remainingAmount * 0.6;
+    const savingsAmount = remainingAmount * 0.4;
+
+    wantsBox.textContent = `Maximum recommended amount to spend: $${wantsAmount.toFixed(2)}`;
+    savingsBox.textContent = `Minimum recommended amount to save: $${savingsAmount.toFixed(2)}`;
+
+    updateBarGraph(budget, salary);
+    salaryDisplay.textContent = `Your Earnings: $${salary}    ||  Remaining Amount after expenses: $${remainingAmount.toFixed(2)}`;
 }
-salaryInput.addEventListener("input",updateSalaryDisplay);
+
+salaryInput.addEventListener("input", updateSalaryDisplay);
 submitBtn.addEventListener("click", handleFormSubmit);
