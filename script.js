@@ -79,7 +79,7 @@ submitBtn.addEventListener("click", handleFormSubmit);
 
 
 
-document.getElementById('addBarButton').addEventListener('click', function() {
+/*document.getElementById('addBarButton').addEventListener('click', function() {
     const form = document.getElementById('budget_form');    const newDiv = document.createElement('div');
     
     const newId = `bill_input_${form.getElementsByTagName('input').length + 1}`;
@@ -98,4 +98,4 @@ document.getElementById('addBarButton').addEventListener('click', function() {
     newDiv.appendChild(document.createElement('br'));
   
     form.insertBefore(newDiv, document.getElementById('addBarButton'));
-});
+}); */
