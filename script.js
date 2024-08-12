@@ -73,3 +73,29 @@ function handleFormSubmit(event) {
 
 salaryInput.addEventListener("input", updateSalaryDisplay);
 submitBtn.addEventListener("click", handleFormSubmit);
+
+
+
+
+
+
+document.getElementById('addBarButton').addEventListener('click', function() {
+    const form = document.getElementById('budget_form');    const newDiv = document.createElement('div');
+    
+    const newId = `bill_input_${form.getElementsByTagName('input').length + 1}`;
+        const newLabel = document.createElement('label');
+    newLabel.setAttribute('for', newId);
+    newLabel.innerHTML = `New Bill ${form.getElementsByTagName('input').length - 1}:&nbsp;&nbsp;&nbsp;&nbsp;`;
+    // Create the input element
+    const newInput = document.createElement('input');
+    newInput.setAttribute('type', 'number');
+    newInput.setAttribute('id', newId);
+    newInput.setAttribute('placeholder', '  Enter cost here');
+    
+    newDiv.appendChild(newLabel);
+    newDiv.appendChild(newInput);
+        newDiv.appendChild(document.createElement('br'));
+    newDiv.appendChild(document.createElement('br'));
+  
+    form.insertBefore(newDiv, document.getElementById('addBarButton'));
+});
