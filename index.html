@@ -24,9 +24,54 @@
     <div id="graySquareBackground">
         <img id="graySquareBackgroundImage" src="images/graysquarebackground.png">
     </div>
+    
 
+    <div class="main_container">
+        <h1 id="calculatorHeading">Calculator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
 
+        <form class="form_container" id="budget_form"><br><br><br><br><br>
+            <div class="adlib">
+                <label for="salary_input">Total Income:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="number" id="salary_input" placeholder="  Enter income here" /><br><br><br><br>
+            </div>
+            <div>
+                <label for="rent_mortgage_input">Rent/Mortgage:&nbsp;&nbsp;</label>
+                <input type="number" id="rent_mortgage_input" placeholder="  Enter cost here" /><br><br>
+            </div>
+            <div>
+                <label for="waterBill_input">Water Bill:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="number" id="waterBill_input" placeholder="  Enter cost here" /><br><br>
+            </div>
+            <div>
+                <label for="electricityBill_input">Electricity Bill:&nbsp;&nbsp;</label>
+                <input type="number" id="electricityBill_input" placeholder="  Enter cost here" /><br><br>
+            </div>
+            <div>
+                <label for="gasBill_input">Gas Bill:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="number" id="gasBill_input" placeholder="  Enter cost here" /><br><br>
+            </div>
+            <div>
+                <label for="phoneBill_input">Phone Bill:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="number" id="phoneBill_input" placeholder="  Enter cost here" /><br><br>
+            </div>
+            <button id="submit_btn" type="button">Calculate</button>
+        </form>
 
+        <div id="whiteRect">
+            <img id="whiteRectImage" src="images/whiterectangle.png">
+        </div>
+
+        <div class="bar-graph">
+            <div class="bar" id="rentmortgage-bar"></div>
+            <div class="bar" id="waterBill-bar"></div>
+            <div class="bar" id="electricityBill-bar"></div>
+            <div class="bar" id="gasBill-bar"></div>
+            <div class="bar" id="phoneBill-bar"></div>
+        </div>
+
+        <h1 id="remaining_display">Amount of money left after expenses: $0</h1>
+
+    </div>
 
 
     <script src="script.js"></script>
